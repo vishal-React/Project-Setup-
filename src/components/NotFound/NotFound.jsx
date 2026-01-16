@@ -3,7 +3,7 @@ import confuseBoy from "@/assets/sadBoy-removebg-preview.png";
 const NotFound = () => {
   return (
     <div
-      className="relative h-dvh w-dvw grid p-14 select-none"
+      className="h-dvh w-dvw grid select-none py-10 sm:p-10"
       style={{
         background: `
           radial-gradient(at top left, #5f8a9a, transparent 60%),
@@ -14,36 +14,38 @@ const NotFound = () => {
         backgroundColor: "#adbeab",
       }}
     >
-      {/* BIG 404 behind everything */}
-      <h1 className="p-14 pl-24 absolute inset-0 text-[15rem] md:text-[30rem] font-extrabold text-white/50 flex justify-center z-0 drop-shadow-lg text-center tracking-wider">
-        404
-      </h1>
-
-      {/* Centered Image */}
-      <div className="flex justify-center z-10">
+      {/* Image & 404*/}
+      <div className="relative flex justify-center items-center">
         <img
           src={confuseBoy}
           alt="Sad Boy 404"
-          className="h-[70vh] object-fill drop-shadow-xl "
+          className="h-[60vh] object-fill drop-shadow-xl z-10"
           draggable="false"
         />
+        <h1
+          className="absolute text-[10rem] sm:text-[19rem] 2xl:text-[30rem] font-extrabold text-white/50 z-0
+                     drop-shadow-lg tracking-wider"
+        >
+          404
+        </h1>
       </div>
 
       {/* Message & Button */}
-      <div className="flex flex-col gap-4 items-center justify-center z-10">
+      <div className="flex flex-col gap-4 items-center justify-center">
         <div>
-          <h1 className="text-6xl font-bold text-white drop-shadow-lg text-center">
+          <h1 className="text-4xl 2xl:text-6xl font-bold text-white drop-shadow-lg text-center">
             Oh No!
           </h1>
-          <p className="text-xl text-white/80 drop-shadow-md text-center">
+          <p className="2xl:text-xl text-white/80 drop-shadow-md text-center">
             The page you are looking for does not exist or has been moved.
           </p>
         </div>
         <button
           className=" cursor-pointer
-                      px-10 py-2
-                      text-2xl
-                      rounded-2xl
+                      px-6 py-1
+                      2xl:px-10 2xl:py-2
+                      md:text-xl 2xl:text-2xl
+                      rounded-xl 2xl:rounded-2xl
                       bg-white/20
                       backdrop-blur-md
                       border border-white/30
