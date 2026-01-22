@@ -1,9 +1,9 @@
-import confuseBoy from "@/assets/sadBoy-removebg-preview.png";
+import { NavLink } from "react-router-dom";
 
 const NotFound = () => {
   return (
     <div
-      className="h-dvh w-dvw grid select-none py-10 sm:p-10"
+      className="h-dvh w-dvw grid select-none py-10 px-2 sm:p-10 overflow-hidden"
       style={{
         background: `
           radial-gradient(at top left, #5f8a9a, transparent 60%),
@@ -17,13 +17,13 @@ const NotFound = () => {
       {/* Image & 404*/}
       <div className="relative flex justify-center items-center">
         <img
-          src={confuseBoy}
+          src="https://res.cloudinary.com/dks6kvoay/image/upload/v1768808800/sadBoy-removebg-preview_ndfx2b.png"
           alt="Sad Boy 404"
-          className="h-[60vh] object-fill drop-shadow-xl z-10"
+          className="sm:h-[60vh] object-fill drop-shadow-xl z-10"
           draggable="false"
         />
         <h1
-          className="absolute text-[10rem] sm:text-[19rem] 2xl:text-[30rem] font-extrabold text-white/50 z-0
+          className="absolute text-[11rem] sm:text-[19rem] 2xl:text-[30rem] font-extrabold text-white/50 z-0
                      drop-shadow-lg tracking-wider"
         >
           404
@@ -40,7 +40,8 @@ const NotFound = () => {
             The page you are looking for does not exist or has been moved.
           </p>
         </div>
-        <button
+        <NavLink
+          to={"/"}
           className=" cursor-pointer
                       px-6 py-1
                       2xl:px-10 2xl:py-2
@@ -57,7 +58,7 @@ const NotFound = () => {
                       duration-300"
         >
           Go Home
-        </button>
+        </NavLink>
       </div>
     </div>
   );
