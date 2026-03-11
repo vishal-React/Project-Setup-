@@ -1,18 +1,25 @@
 import { createBrowserRouter, Outlet } from "react-router-dom";
-import App from "../components/App";
-import NotFound from "../components/NotFound/NotFound";
-import ErrorPage from "../components/ErrorPage/ErrorPage";
+import { AppPage, ErrorPage, NotFoundPage } from "../lazy/pages";
+import { Suspense } from "react";
 
-const RootLayout = () => <Outlet />;
+const RootLayout = () => (
+  <Suspense fallback={<h2>loading...</h2>}>
+    <Outlet />
+  </Suspense>
+);
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
-    errorElement: <ErrorPage />,
+    errorElement: (
+      <Suspense fallback={<h2>Loading...</h2>}>
+        <ErrorPage />
+      </Suspense>
+    ),
     children: [
-      { index: true, element: <App /> },
-      { path: "*", element: <NotFound /> },
+      { index: true, element: <AppPage /> },
+      { path: "*", element: <NotFoundPage /> },
     ],
   },
 ]);
