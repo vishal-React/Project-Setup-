@@ -14,11 +14,11 @@ const NotFound = () => {
         backgroundColor: "#adbeab",
       }}
     >
-      {/* Image & 404*/}
+      {/* Image & 404 */}
       <div className="relative flex justify-center items-center">
         <img
           src="https://res.cloudinary.com/dks6kvoay/image/upload/v1768808800/sadBoy-removebg-preview_ndfx2b.png"
-          alt="Sad Boy 404"
+          alt="404 image"
           className="sm:h-[60vh] object-fill drop-shadow-xl z-10"
           draggable="false"
         />
